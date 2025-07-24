@@ -1,4 +1,21 @@
 
+
+<!-- BANNERS -->
+<p align="center">
+  <a href="https://github.com/norman-luengo/medium-articles/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/norman-luengo/medium-articles.svg" alt="License">
+  </a>
+  <a href="https://www.python.org/downloads/release/python-3130/">
+    <img src="https://img.shields.io/badge/python-3.13%2B-blue.svg" alt="Python 3.13+">
+  </a>
+  <a href="https://pypi.org/project/pydantic-ai/">
+    <img src="https://img.shields.io/pypi/v/pydantic-ai.svg?label=pydantic-ai" alt="pydantic-ai">
+  </a>
+  <a href="https://fastapi.tiangolo.com/">
+    <img src="https://img.shields.io/badge/FastAPI-async%20web%20framework-green" alt="FastAPI">
+  </a>
+</p>
+
 # medium-articles
 
 This repository contains code and experiments for Medium articles, including AI agent demos and Python concurrency experiments.
