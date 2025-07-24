@@ -1,0 +1,28 @@
+services:
+  app:
+    build:
+      context: ./app
+    ports:
+      - "8000:8000"
+    environment:
+      - MLFLOW_TRACKING_URI=http://mlflow:5000
+    volumes:
+      - app-code:/app
+      - mlruns:/mlruns
+    env_file:
+      - .env
+
+  mlflow:
+    image: ghcr.io/mlflow/mlflow:v3.1.0
+    ports:
+      - "5000:5000"
+    environment:
+      - MLFLOW_ARTIFACT_ROOT=/mlruns
+    volumes:
+      - mlruns:/mlruns
+    env_file:
+      - .env
+
+volumes:
+  app-code:
+  mlruns:
