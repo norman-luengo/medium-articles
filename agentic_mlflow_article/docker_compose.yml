@@ -1,27 +1,31 @@
 services:
   app:
+    container_name: agentic-app
     build:
-      context: ./app
+      context: ../
+      dockerfile: agentic_mlflow_article/Dockerfile
     ports:
       - "8000:8000"
     environment:
-      - MLFLOW_TRACKING_URI=http://mlflow:5000
+      - MLFLOW_TRACKING_URI=http://mlflow:5001
     volumes:
-      - app-code:/app
+      - ../agentic_mlflow_article/app:/app/app:rw
       - mlruns:/mlruns
-    env_file:
-      - .env
+
+    # env_file:
+    #   - .env
 
   mlflow:
+    container_name: agentic-mlflow
     image: ghcr.io/mlflow/mlflow:v3.1.0
     ports:
-      - "5000:5000"
+      - "5001:5001"
     environment:
       - MLFLOW_ARTIFACT_ROOT=/mlruns
     volumes:
       - mlruns:/mlruns
-    env_file:
-      - .env
+    # env_file:
+    #   - .env
 
 volumes:
   app-code:
