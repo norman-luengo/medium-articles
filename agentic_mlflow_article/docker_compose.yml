@@ -7,7 +7,7 @@ services:
     ports:
       - "8000:8000"
     environment:
-      - MLFLOW_TRACKING_URI=http://mlflow:5001
+      - MLFLOW_TRACKING_URI=https://9h6vlw9n-5001.uks1.devtunnels.ms/
     volumes:
       - ../agentic_mlflow_article/app:/app/app:rw
       - mlruns:/mlruns

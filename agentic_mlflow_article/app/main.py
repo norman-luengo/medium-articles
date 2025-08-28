@@ -17,7 +17,7 @@ async def chat_agent(payload: QuestionRequest):
         raise HTTPException(status_code=400, detail="Question cannot be empty.")
     
     ollama_model = OpenAIModel(
-    model_name='deepseek-r1:32b', provider=OpenAIProvider(base_url='http://localhost:11434/v1')
+    model_name='llama3.2', provider=OpenAIProvider(base_url='http://127.0.0.1:11434/v1')
 )
     system_prompt = 'You are a helpful assistant. Answer concisely.'
     agent = Agent(
